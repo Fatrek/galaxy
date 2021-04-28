@@ -5,8 +5,11 @@ if you don't like moving your hand to the shift button and hold it to get capita
 what this script does is it changes space button function like
 
 first press = space button
+
 second press = shift down
+
 third press = shift up
+
 forth and so on = spaces
 
 
