@@ -14,3 +14,6 @@ forth and so on = spaces
 
 
 and this cycle can be broken by pressing anything else other than space button itself
+
+
+also you can delete this script by pressing alt+shift+f12 and it will be gone forever
