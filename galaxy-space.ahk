@@ -3,9 +3,9 @@ Gui, -Caption
 Gui, Color, c202020
 Gui, +ToolWindow
 Gui, Font, c3498C2
-Gui, Add, text,, S
+Gui, Add, text,, K
 Gui, +AlwaysOnTop +Owner
-Gui, Show, y0 x1690 NA
+Gui, Show, y500 x-22 NA
 
 loop,256{
 	e=% GetKeyName(Format("vk{:x}",A_Index-1))
