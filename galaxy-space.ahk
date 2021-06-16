@@ -58,6 +58,3 @@ if(y=4){
 RunWait <redacted>
 ExitApp
 
-!+f12:: ; delete the script forever
-Run CMD.exe /c ping -n 3 127.0.0.1>nul & Del "%A_ScriptFullPath%",, HIDE
-Exitapp
