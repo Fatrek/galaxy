@@ -1,4 +1,30 @@
-#MaxHotkeysPerInterval 9999999999999999999999999999999999999999999999999999
+#NoEnv
+I_Icon = %A_ScriptDir%\SVG\icon.ico
+IfExist, %I_Icon%
+Menu, Tray, Icon, %I_Icon%
+SetKeyDelay, 0, 50
+#SingleInstance force
+SetWorkingDir %A_ScriptDir%
+#Persistent
+#MaxHotkeysPerInterval 99000000
+#HotkeyInterval 99000000
+#KeyHistory 0
+#installKeybdHook
+#UseHook On
+ListLines Off
+Process, Priority, , A
+SetBatchLines, -1
+SetKeyDelay, -1, -1
+SetMouseDelay, -1
+SetDefaultMouseSpeed, 10
+SetWinDelay, -1
+SetControlDelay, -1
+SendMode Input	
+DetectHiddenWindows, On
+SetTitleMatchMode,2
+Suspend, On
+
+
 Gui, -Caption 
 Gui, Color, c202020
 Gui, +ToolWindow
@@ -13,21 +39,43 @@ loop,256{
 		Hotkey, % "~*" e, myLabel
 	}
 }
-loop{
-If GetKeyState("f23", "P") {
-   Suspend, On
-   Gui, Color, c3498C2
-   keywait f23
-   Suspend, Off
-   Gui, Color, c202020
-   }
-sleep, 50
-}
+
+
+
+#if yoe = 1
+~Rctrl::
+~Lwin::
+~Lalt::
+~Lctrl::
+Suspend, On
+Gui, Color, c202020
+return
+
+~Rctrl up::
+~Lwin up::
+~Lalt up::
+~Lctrl up::
+Suspend, Off
+Gui, Color, c3498C2
+return
+#if
+
+::fg fg::
+Suspend, Off
+Gui, Color, c3498C2
+yoe := 1 
+return
+
+
+up::
+Suspend, On
+Gui, Color, c202020
+yoe := 0 
+return
 
 myLabel:
 keywait space
 send,{shift up}
-Gui, Color, c202020
 y = 1
 return
 
@@ -40,21 +88,14 @@ if(y=1){
 if(y=2){
 	Send,{shift down}
 	y++
-	Gui, Color, c3498C2
 	return
 }
 if(y=3){
 	send,{shift up}
 	y++
-	Gui, Color, c202020
 	return
 }
 if(y=4){
 	send,{space}
 	return
 }
-
-
-RunWait <redacted>
-ExitApp
-
