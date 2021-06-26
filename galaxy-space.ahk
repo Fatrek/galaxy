@@ -47,6 +47,8 @@ loop,256{
 ~Lwin::
 ~Lalt::
 ~Lctrl::
+~Lshift::
+~f23::
 Suspend, On
 Gui, Color, c202020
 return
@@ -55,23 +57,29 @@ return
 ~Lwin up::
 ~Lalt up::
 ~Lctrl up::
+~Lshift up::
+~f23 up::
 Suspend, Off
 Gui, Color, c3498C2
 return
 #if
 
-::fg fg::
+::fg::
 Suspend, Off
 Gui, Color, c3498C2
 yoe := 1 
 return
 
 
-up::
+delete::
 Suspend, On
 Gui, Color, c202020
 yoe := 0 
 return
+
+keywait space
+send,{shift up}
+y = 1
 
 myLabel:
 keywait space
