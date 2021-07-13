@@ -62,7 +62,7 @@ loop,256{
 myLabel:
 keywait space
 send,{shift up}
-global y = 1
+y = 1
 return
 
 
@@ -86,10 +86,9 @@ Return
 
 ~Lctrl::
 ~Lshift::
-~*Lwin::
 keywait space
 send,{shift up}
-global y = 1
+y = 1
 return
 
 
@@ -98,6 +97,8 @@ return
 suspend, on
 Gui, Color, c202020
 return
+~Lctrl up::
+~Lshift up::
 ~f23 up::
 ~Lwin up::
 suspend, off
