@@ -85,24 +85,26 @@ Return
 #if yoe = 1
 
 ~Lctrl::
-~Lshift::
+~*Lwin::
 keywait space
 send,{shift up}
 y = 1
 return
 
 
+
+~Lshift::
+~Rshift::
 ~f23::
 ~Lwin::
 suspend, on
-Gui, Color, c202020
 return
 ~Lctrl up::
 ~Lshift up::
+~Rshift up::
 ~f23 up::
 ~Lwin up::
 suspend, off
-Gui, Color, c3498C2
 return
 
 
