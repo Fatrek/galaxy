@@ -92,16 +92,24 @@ y = 1
 return
 
 
+~Lwin::
+suspend, on
+return
+
+
 
 ~Lshift::
 ~Rshift::
 ~f23::
-~Lwin::
+~backspace::
+send,{shift up}
+y = 1
 suspend, on
 return
 ~Lctrl up::
 ~Lshift up::
 ~Rshift up::
+~backspace up::
 ~f23 up::
 ~Lwin up::
 suspend, off
