@@ -73,7 +73,7 @@ FileDelete, %A_WorkingDir%\data\%NAM%.ini
 OnWinActiveChange(hWinEventHook, vEvent, hWnd)
 return
 }
-if !FileExist( A_WorkingDir "\data\" NAM ".ini"){
+else{
 FileAppend,, %A_WorkingDir%\data\%NAM%.ini
 OnWinActiveChange(hWinEventHook, vEvent, hWnd)
 return
@@ -93,13 +93,14 @@ return
 
 
 ~Lwin::
+~Lshift::
+~Rshift::
 suspend, on
+y = 1
 return
 
 
 
-~Lshift::
-~Rshift::
 ~f23::
 ~backspace::
 send,{shift up}
